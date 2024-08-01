@@ -3,15 +3,12 @@ import { Footer } from '../components/footer';
 import { Header } from '../components/header';
 
 export const metadata = {
-    title: {
-        template: '%s | Netlify',
-        default: 'Netlify Starter'
-    }
+    title: 'Espacio 360'
 };
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="en" data-theme="lofi">
+        <html lang="en" data-theme="lofi"   className={`scroll-smooth`}>
             <head>
                 <link rel="icon" href="/favicon.svg" sizes="any" />
             </head>
