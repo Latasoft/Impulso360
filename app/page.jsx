@@ -29,7 +29,7 @@ const ctx = getNetlifyContext();
 
 export default function Page() {
     return (
-        <main className={` text-white `}>
+        <main className={` text-white font-Roboto`}>
             <section className={` w-full bg-cover bg-center bg-black`} style={{ backgroundImage: `url('images/portadaFondo.webp')`, }}>
                 <div className={` max-w-5xl mx-auto py-44`}>
                     <h2 className={` transition-all ease-in-out duration-100 text-4xl  lg:text-5xl font-bold m-4`}>En Impulso 360</h2>
