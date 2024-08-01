@@ -15,6 +15,7 @@ module.exports = {
             fontFamily: {
                 sans: ['Inter', ...defaultTheme.fontFamily.sans],
                 Roboto: ['Roboto', ...defaultTheme.fontFamily.sans],
+                RobotoCondensed: ['Roboto Condensed', ...defaultTheme.fontFamily.sans],
                 NotoSerif: ['Noto Serif', ...defaultTheme.fontFamily.sans]
             }
         }
