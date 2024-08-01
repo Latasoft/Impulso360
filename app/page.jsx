@@ -36,7 +36,6 @@ export default function Page() {
             </section>
             <section>
                 <h3 className={` max-w-5xl mx-auto transition-all ease-in-out duration-100 text-3xl lg:text-4xl font-semibold m-8 text-center uppercase `}>Servicios integrales</h3>
-
                 {!!serviciosBlocks?.length && (
                     <div className={` grid grid-cols-1 md:grid-cols-2 `}>
                         {serviciosBlocks.map((item, index) => (
@@ -56,25 +55,22 @@ export default function Page() {
             <section>
                 <div className={` max-w-5xl mx-auto grid md:grid-cols-2 grid-cols-1 `}>
                     <div className={` p-8 `}>
-                    <h3 className={` text-[#b10c72] transition-all ease-in-out duration-100 text-3xl lg:text-4xl font-semibold mx-4 my-8 `}>¿Por qué nosotros?</h3>
-                    <ul className={` list-disc transition-all ease-in-out duration-100 text-lg ml-8 mr-4 `}>
-                        <li className={` my-4 `}>Nuestro servicio incluye la implementación de un CRM de última generación que optimiza la gestión de leads y seguimientos. Con esta herramienta, podrás mejorar la eficiencia de tu empresa y aumentar tus oportunidades de venta.</li>
-                        <li className={` my-4 `}>Colaboramos estrechamente contigo para comprender tus metas, identificar desafíos específicos y crear estrategias de marketing digital personalizadas.</li>
-                        <li className={` my-4 `}>No brindamos soluciones estándar, sino que diseñamos estrategias que se ajustan de forma precisa a tu visión y objetivos comerciales.</li>
-                        <li className={` my-4 `}>Nos dedicamos a potenciar el crecimiento de tu empresa a través de servicios integrales de marketing digital y la implementación estratégica de CRM.</li>
-                    </ul>
-
+                        <h3 className={` text-[#b10c72] transition-all ease-in-out duration-100 text-3xl lg:text-4xl font-semibold mx-4 my-8 `}>¿Por qué nosotros?</h3>
+                        <ul className={` list-disc transition-all ease-in-out duration-100 text-lg ml-8 mr-4 `}>
+                            <li className={` my-4 `}>Nuestro servicio incluye la implementación de un CRM de última generación que optimiza la gestión de leads y seguimientos. Con esta herramienta, podrás mejorar la eficiencia de tu empresa y aumentar tus oportunidades de venta.</li>
+                            <li className={` my-4 `}>Colaboramos estrechamente contigo para comprender tus metas, identificar desafíos específicos y crear estrategias de marketing digital personalizadas.</li>
+                            <li className={` my-4 `}>No brindamos soluciones estándar, sino que diseñamos estrategias que se ajustan de forma precisa a tu visión y objetivos comerciales.</li>
+                            <li className={` my-4 `}>Nos dedicamos a potenciar el crecimiento de tu empresa a través de servicios integrales de marketing digital y la implementación estratégica de CRM.</li>
+                        </ul>
                     </div>
                     <div className={`flex items-center justify-center p-8 text-center `}>
                         <Image className={` mx-auto `} src={porQueNosotros} alt='' />
                     </div>
                 </div>
                 <div className={` bg-white `}>
-                <p className={` max-w-5xl mx-auto px-8 py-16 text-center text-black font-semibold text-xl lg:text-2xl leading-relaxed lg:leading-relaxed `}>Nos consideramos socios estratégicos de tu éxito. Nos dedicamos a impulsar tu presencia en línea, aumentar la visibilidad de tu marca y, en última instancia, a potenciar el crecimiento sostenible de tu negocio en el mundo digital.</p>
-
+                    <p className={` max-w-5xl mx-auto px-8 py-16 text-center text-black font-semibold text-xl lg:text-2xl leading-relaxed lg:leading-relaxed `}>Nos consideramos socios estratégicos de tu éxito. Nos dedicamos a impulsar tu presencia en línea, aumentar la visibilidad de tu marca y, en última instancia, a potenciar el crecimiento sostenible de tu negocio en el mundo digital.</p>
                 </div>
             </section>
-
         </main>
     );
 }
