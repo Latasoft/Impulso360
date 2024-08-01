@@ -21,7 +21,7 @@ const serviciosBlocks = [
 export default function Page() {
     return (
         <main className={` text-white font-Roboto  sm:mt-16  lg:mt-20`}>
-            <section className={` h-screen relative w-full bg-cover bg-center bg-black overflow-hidden`} >
+            <section className={` h-screen relative w-full bg-cover bg-center bg-black overflow-hidden  `} >
                 <div className={` absolute top-0 left-0 w-full h-full `}>
                     <video poster='images/portadaFondoVideo.png' className='object-cover object-center h-full w-full' preload="auto" autoPlay="autoplay" muted loop playsInline>
                         <source src='images/portadaFondoVideo.mp4' type="video/mp4" />
@@ -69,6 +69,31 @@ export default function Page() {
                 </div>
                 <div className={` bg-white `}>
                     <p className={` max-w-5xl mx-auto px-8 py-16 text-center text-black font-semibold text-xl lg:text-2xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>Nos consideramos socios estratégicos de tu éxito. Nos dedicamos a impulsar tu presencia en línea, aumentar la visibilidad de tu marca y, en última instancia, a potenciar el crecimiento sostenible de tu negocio en el mundo digital.</p>
+                </div>
+            </section>
+            <section className={` relative w-full bg-cover bg-center bg-black overflow-hidden `} >
+                <div className={` absolute top-0 left-0 w-full h-full `}>
+                    <video poster='images/portadaFondoVideo.png' className='object-cover object-center h-full w-full' preload="auto" autoPlay="autoplay" muted loop playsInline>
+                        <source src='images/portadaFondoVideo.mp4' type="video/mp4" />
+                    </video>
+                </div>
+                <div className={` relative px-4 py-16`}>
+                    <h2 className={` max-w-5xl mx-auto text-center w-full transition-all ease-in-out duration-100 text-3xl lg:text-3xl font-bold lg:my-2 opacity-80 uppercase`}>Nuestros tres pilares esenciales</h2>
+                    <div className={` mx-auto max-w-5xl grid md:grid-cols-3 grid-cols-1 mt-8 `}>
+                    <div className={` mx-auto text-center w-full text-lg bg-white bg-opacity-30 p-8 `}>
+                        <h3 className={` text-2xl font-medium mb-4`}>Enfoque Estratégico Personalizado</h3>
+                        <p className={` text-lg`}>Entendemos que cada negocio es único. Trabajamos contigo para comprender tus objetivos, identificar desafíos específicos y desarrollar estrategias de marketing digital a medida. No ofrecemos soluciones genéricas; creamos estrategias que se alinean con tu visión y metas empresariales.</p>
+                    </div>
+                    <div className={` mx-auto text-center w-full text-lg bg-[#b10c72] bg-opacity-30 p-8 `}>
+                        <h3 className={` text-2xl font-medium mb-4`}>Enfoque Estratégico Personalizado</h3>
+                        <p className={` text-lg`}>Entendemos que cada negocio es único. Trabajamos contigo para comprender tus objetivos, identificar desafíos específicos y desarrollar estrategias de marketing digital a medida. No ofrecemos soluciones genéricas; creamos estrategias que se alinean con tu visión y metas empresariales.</p>
+                    </div>
+                    <div className={` mx-auto text-center w-full text-lg bg-white bg-opacity-30 p-8 `}>
+                        <h3 className={` text-2xl font-medium mb-4`}>Enfoque Estratégico Personalizado</h3>
+                        <p className={` text-lg`}>Entendemos que cada negocio es único. Trabajamos contigo para comprender tus objetivos, identificar desafíos específicos y desarrollar estrategias de marketing digital a medida. No ofrecemos soluciones genéricas; creamos estrategias que se alinean con tu visión y metas empresariales.</p>
+                    </div>
+
+                    </div>
                 </div>
             </section>
         </main>
