@@ -29,7 +29,14 @@ const ctx = getNetlifyContext();
 
 export default function Page() {
     return (
-        <main className="flex flex-col gap-8 sm:gap-16">
+        <main className={` text-white `}>
+            <section className={` w-full bg-cover bg-center bg-black`} style={{ backgroundImage: `url('images/portadaFondo.webp')`, }}>
+                <div className={` max-w-5xl mx-auto py-44`}>
+                    <h2 className={` text-5xl font-bold my-4`}>En Impulso 360</h2>
+                    <h3 className={` text-3xl font-bold my-4 `}>comienza tu transformación digital hoy</h3>
+                    <p className={` text-lg my-4 `}><Link className={` rounded-full py-2 px-4 bg-[#b10c72] no-underline font-semibold`} href='' >Conoce más aquí</Link></p>
+                </div>
+            </section>
             <section className="flex flex-col items-start gap-3 sm:gap-4">
                 <ContextAlert />
                 <h1 className="mb-0">Netlify Platform Starter - Next.js</h1>
