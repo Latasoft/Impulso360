@@ -30,13 +30,26 @@ const ctx = getNetlifyContext();
 export default function Page() {
     return (
         <main className={` text-white font-Roboto`}>
-            <section className={` w-full bg-cover bg-center bg-black`} style={{ backgroundImage: `url('images/portadaFondo.webp')`, }}>
+            <section className={` w-full bg-cover bg-center bg-black`} style={{ backgroundImage: `url('images/portadaFondoA.webp')`, }}>
                 <div className={` max-w-5xl mx-auto py-44`}>
                     <h2 className={` transition-all ease-in-out duration-100 text-4xl  lg:text-5xl font-bold m-4`}>En Impulso 360</h2>
                     <h3 className={` transition-all ease-in-out duration-100 text-2xl lg:text-3xl font-semibold m-4 `}>comienza tu transformación digital hoy</h3>
                     <p className={` transition-all ease-in-out duration-100 text-lg mx-4 my-8 `}><Link className={` rounded-full py-3 px-6 bg-[#b10c72] no-underline font-medium`} href='' >Conoce más aquí</Link></p>
                 </div>
             </section>
+            <section className={` w-full bg-cover bg-center bg-black`} style={{ backgroundImage: `url('images/portadaFondoB.jpg')`, }}>
+                <div className={` max-w-5xl mx-auto py-28 text-center`}>
+                    <div className={`py-6 bg-black bg-opacity-60`}>
+                        <h3 className={` transition-all ease-in-out duration-100 text-4xl lg:text-5xl font-semibold m-8 `}>Servicios integrales</h3>
+                        <h4 className={` transition-all ease-in-out duration-100 text-xl lg:text-2xl font-semibold m-4 `}>Estrategias digitales</h4>
+                        <p className={` transition-all ease-in-out duration-100 text-lg mx-4 my-4 `}>Transformamos tus metas comerciales en estrategias digitales efectivas. Desde la identificación del público objetivo hasta análisis competitivo, creamos planes personalizados para tu éxito.</p>
+                        <p className={`  text-lg mx-4 my-8 `}><Link className={` transition-all ease-in-out duration-100 rounded-full py-3 px-6 bg-white hover:bg-[#b10c72] text-black hover:text-white no-underline font-medium`} href='' >Cotiza aquí</Link></p>
+
+                    </div>
+                </div>
+            </section>
+
+
             <section className="flex flex-col items-start gap-3 sm:gap-4">
                 <ContextAlert />
                 <h1 className="mb-0">Netlify Platform Starter - Next.js</h1>
