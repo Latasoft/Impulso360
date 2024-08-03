@@ -3,7 +3,7 @@ import { Footer } from '../components/footer';
 import { Header } from '../components/header';
 
 export const metadata = {
-    title: 'Espacio 360'
+    title: 'Impulso 360'
 };
 
 export default function RootLayout({ children }) {

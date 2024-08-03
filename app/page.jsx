@@ -1,3 +1,5 @@
+"use client";
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -18,7 +20,43 @@ const serviciosBlocks = [
     { fondoImagen: portadaFondoG, titulo: 'Diseño y Desarrollo Web', descripcion: 'Creamos sitios web responsivos y optimizados para brindar una experiencia excepcional al usuario. Desde la velocidad hasta la integración de tecnologías, garantizamos una presencia online efectiva.' }
 ]
 
+
+import clientesA from 'public/images/clientesA.webp';
+import clientesB from 'public/images/clientesB.webp';
+import clientesC from 'public/images/clientesC.webp';
+import clientesD from 'public/images/clientesD.webp';
+import clientesE from 'public/images/clientesE.webp';
+import clientesF from 'public/images/clientesF.webp';
+
+
+const clientesImagenes = [
+    { imagen: clientesA },
+    { imagen: clientesB },
+    { imagen: clientesC },
+    { imagen: clientesD },
+    { imagen: clientesE },
+    { imagen: clientesF }
+]
+
 export default function Page() {
+
+const [currentClientesImagenesIndex, setCurrentClientesImagenesIndex] = useState(0);
+const [fade, setFade] = useState(true); // State to manage fade effect
+
+useEffect(() => {
+    const interval = setInterval(() => {
+      setFade(false); // Start fade out
+      setTimeout(() => {
+        setCurrentClientesImagenesIndex((prevIndex) => (prevIndex + 1) % clientesImagenes.length);
+        setFade(true); // Start fade in
+      }, 382); // Duration of fade out before changing text
+    }, 1618); // Change the interval to your preference
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const { imagen } = clientesImagenes[currentClientesImagenesIndex];
+
     return (
         <main className={` text-white font-Roboto  sm:mt-16  lg:mt-20`}>
             <section className={` h-screen relative w-full bg-cover bg-center bg-black overflow-hidden  `} >
@@ -34,17 +72,17 @@ export default function Page() {
                     <p className={` max-w-5xl text-left w-full text-lg my-8 `}><Link className={` transition-all ease-in-out duration-200 rounded-full py-3 px-6 hover:bg-white bg-[#b10c72] hover:text-black text-white no-underline font-medium`} href='' >Conoce más aquí</Link></p>
                 </div>
             </section>
-            <section>
-                <h3 className={` max-w-5xl mx-auto transition-all ease-in-out duration-100 text-3xl lg:text-4xl font-semibold m-8 text-center uppercase font-RobotoCondensed`}>Servicios integrales</h3>
+            <section className={` pt-16 pb-4 bg-neutral-700 `}>
+                <h3 className={` max-w-5xl mx-auto transition-all ease-in-out duration-100 text-3xl lg:text-4xl font-semibold mb-8 text-center uppercase font-RobotoCondensed`}>Servicios integrales</h3>
                 {!!serviciosBlocks?.length && (
-                    <div className={` grid grid-cols-1 md:grid-cols-2 `}>
+                    <div className={` mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-4`}>
                         {serviciosBlocks.map((item, index) => (
                             <div key={index} className={` w-full bg-cover bg-center `} style={{ backgroundImage: `url('${item.fondoImagen.src}')`, }}>
-                                <div className={` py-28 md:px-4 lg:px-8 xl:px-16 text-center`}>
+                                <div className={` py-28 px-4 md:px-4 lg:px-8 xl:px-16 text-center`}>
                                     <div className={`py-6 bg-black bg-opacity-60`}>
                                         <h3 className={` transition-all ease-in-out duration-100 text-3xl lg:text-4xl font-semibold mx-4 my-8 font-RobotoCondensed`}>{item.titulo}</h3>
                                         <p className={` transition-all ease-in-out duration-100 text-lg lg:text-xl m-4 `}>{item.descripcion}</p>
-                                        <p className={`  text-lg mx-4 my-8 `}><Link className={` transition-all ease-in-out duration-200 rounded-full py-3 px-6 bg-white hover:bg-[#b10c72] text-black hover:text-white no-underline font-medium`} href='' >Cotiza aquí</Link></p>
+                                        {/* <p className={`  text-lg mx-4 my-8 `}><Link className={` transition-all ease-in-out duration-200 rounded-full py-3 px-6 bg-white hover:bg-[#b10c72] text-black hover:text-white no-underline font-medium`} href='' >Cotiza aquí</Link></p> */}
                                     </div>
                                 </div>
                             </div>
@@ -79,22 +117,54 @@ export default function Page() {
                 </div>
                 <div className={` relative px-4 py-16`}>
                     <h2 className={` max-w-5xl mx-auto text-center w-full transition-all ease-in-out duration-100 text-3xl lg:text-3xl font-bold lg:my-2 opacity-80 uppercase`}>Nuestros tres pilares esenciales</h2>
+
                     <div className={` mx-auto max-w-5xl grid md:grid-cols-3 grid-cols-1 mt-8 `}>
-                    <div className={` mx-auto text-center w-full text-lg bg-white bg-opacity-30 p-8 `}>
-                        <h3 className={` text-2xl font-medium mb-4`}>Enfoque Estratégico Personalizado</h3>
-                        <p className={` text-lg`}>Entendemos que cada negocio es único. Trabajamos contigo para comprender tus objetivos, identificar desafíos específicos y desarrollar estrategias de marketing digital a medida. No ofrecemos soluciones genéricas; creamos estrategias que se alinean con tu visión y metas empresariales.</p>
-                    </div>
-                    <div className={` mx-auto text-center w-full text-lg bg-[#b10c72] bg-opacity-30 p-8 `}>
-                        <h3 className={` text-2xl font-medium mb-4`}>Enfoque Estratégico Personalizado</h3>
-                        <p className={` text-lg`}>Entendemos que cada negocio es único. Trabajamos contigo para comprender tus objetivos, identificar desafíos específicos y desarrollar estrategias de marketing digital a medida. No ofrecemos soluciones genéricas; creamos estrategias que se alinean con tu visión y metas empresariales.</p>
-                    </div>
-                    <div className={` mx-auto text-center w-full text-lg bg-white bg-opacity-30 p-8 `}>
-                        <h3 className={` text-2xl font-medium mb-4`}>Enfoque Estratégico Personalizado</h3>
-                        <p className={` text-lg`}>Entendemos que cada negocio es único. Trabajamos contigo para comprender tus objetivos, identificar desafíos específicos y desarrollar estrategias de marketing digital a medida. No ofrecemos soluciones genéricas; creamos estrategias que se alinean con tu visión y metas empresariales.</p>
-                    </div>
+                        <div className={` mx-auto text-center w-full text-lg bg-white bg-opacity-30 p-8 `}>
+                            <h3 className={` text-2xl font-medium mb-4`}>Enfoque Estratégico Personalizado</h3>
+                            <p className={` text-lg`}>Entendemos que cada negocio es único. Trabajamos contigo para comprender tus objetivos, identificar desafíos específicos y desarrollar estrategias de marketing digital a medida. No ofrecemos soluciones genéricas; creamos estrategias que se alinean con tu visión y metas empresariales.</p>
+                        </div>
+                        <div className={` mx-auto text-center w-full text-lg bg-[#b10c72] bg-opacity-30 p-8 `}>
+                            <h3 className={` text-2xl font-medium mb-4`}>Innovación y Adaptabilidad Continuas</h3>
+                            <p className={` text-lg`}>El marketing digital evoluciona constantemente. Nos comprometemos a mantenerte al tanto de las últimas tendencias y tecnologías. Nuestro equipo altamente capacitado se esfuerza por la innovación constante para asegurar que tu presencia en línea esté siempre a la par con las mejores prácticas y te dé una ventaja competitiva sostenible.</p>
+                        </div>
+                        <div className={` mx-auto text-center w-full text-lg bg-white bg-opacity-30 p-8 `}>
+                            <h3 className={` text-2xl font-medium mb-4`}>Resultados Medibles y Tangibles</h3>
+                            <p className={` text-lg`}>No nos conformamos con promesas vacías. Implementamos estrategias con datos y métricas concretas para asegurarnos de que cada campaña genere resultados tangibles.</p>
+                        </div>
 
                     </div>
                 </div>
+            </section>
+            <section className={` bg-black py-16 `}>
+                <p className={` max-w-5xl mx-auto px-8 text-center text-white font-semibold text-xl lg:text-2xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>
+                    Algunos de los clientes que han confiado en nosotros
+                </p>
+                <p className={` max-w-5xl mx-auto px-8 mt-8 text-center `}>
+                                <Image className={` mx-5 inline-block transition-opacity duration-[618ms] ease-in-out ${fade ? 'opacity-100' : 'opacity-0'} `} src={ imagen } alt='' />
+                </p>
+
+            </section>
+            <section className={` bg-white `}>
+                    <p className={` max-w-5xl mx-auto px-8 py-16 text-center text-black font-semibold text-xl lg:text-2xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>¿Aún no estás seguro? Contactanos para ofrecerte una asesoria personalizada y aclarar tus dudas.</p>
+            </section>
+            <section className={` bg-black `}>
+                <div className={` max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 `}>
+                    <div className={` w-1/2 text-center text-white font-semibold text-xl lg:text-2xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>
+                        asdfasd
+                    </div>
+                    <div className={`w-1/2  not-italic text-left text-white font-normal text-lg lg:text-xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>
+                        <adress className={` not-italic `}>
+                            <p>Dirección: Av. Los Rosales 122, 28021, Madrid.</p>
+                            <p><Link className={` no-underline `} href='mailto:info@misitio.com'>Email: info@misitio.com</Link></p>
+                            <p><Link className={` no-underline `} href='tel:tel:914123456'>Teléfono: 914-123-456</Link></p>
+                        </adress>
+                    </div>
+                </div>
+            </section>
+            <section className={` bg-white py-4`}>
+                <p className={` max-w-5xl mx-auto px-8 text-left text-black font-normal text-lg lg:text-xl font-RobotoCondensed`}>
+                    ©Impulso360 todos los derechos reservados
+                </p>
             </section>
         </main>
     );
