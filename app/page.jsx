@@ -148,11 +148,10 @@ useEffect(() => {
                     <p className={` max-w-5xl mx-auto px-8 py-16 text-center text-black font-semibold text-xl lg:text-2xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>¿Aún no estás seguro? Contactanos para ofrecerte una asesoria personalizada y aclarar tus dudas.</p>
             </section>
             <section className={` bg-black `}>
-                <div className={` max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 `}>
-                    <div className={` w-1/2 text-center text-white font-semibold text-xl lg:text-2xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>
-                        asdfasd
+                <div className={` max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 `}>
+                    <div className={` text-center text-white font-semibold text-xl lg:text-2xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>
                     </div>
-                    <div className={`w-1/2  not-italic text-left text-white font-normal text-lg lg:text-xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>
+                    <div className={` not-italic text-left text-white font-normal text-lg lg:text-xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>
                         <adress className={` not-italic `}>
                             <p>Dirección: Av. Los Rosales 122, 28021, Madrid.</p>
                             <p><Link className={` no-underline `} href='mailto:info@misitio.com'>Email: info@misitio.com</Link></p>
