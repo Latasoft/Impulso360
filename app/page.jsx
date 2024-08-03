@@ -21,8 +21,8 @@ const serviciosBlocks = [
 ]
 
 
-import clientesA from 'public/images/clientesA.webp';
-import clientesB from 'public/images/clientesB.webp';
+import clientesA from 'public/images/clientesA.png';
+import clientesB from 'public/images/clientesB.png';
 import clientesC from 'public/images/clientesC.webp';
 import clientesD from 'public/images/clientesD.webp';
 import clientesE from 'public/images/clientesE.webp';
@@ -41,16 +41,16 @@ const clientesImagenes = [
 export default function Page() {
 
 const [currentClientesImagenesIndex, setCurrentClientesImagenesIndex] = useState(0);
-const [fade, setFade] = useState(true); // State to manage fade effect
+const [fade, setFade] = useState(true);
 
 useEffect(() => {
     const interval = setInterval(() => {
-      setFade(false); // Start fade out
+      setFade(false);
       setTimeout(() => {
         setCurrentClientesImagenesIndex((prevIndex) => (prevIndex + 1) % clientesImagenes.length);
-        setFade(true); // Start fade in
-      }, 382); // Duration of fade out before changing text
-    }, 1618); // Change the interval to your preference
+        setFade(true);
+      }, 618);
+    }, 2382);
 
     return () => clearInterval(interval);
   }, []);
