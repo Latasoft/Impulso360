@@ -147,7 +147,7 @@ useEffect(() => {
                     Algunos de los clientes que han confiado en nosotros
                 </p>
                 <p className={` relative max-w-5xl mx-auto px-8 mt-8 text-center pb-16 `}>
-                    <Image className={` mx-5 inline-block transition-opacity duration-[618ms] ease-in-out ${fade ? 'opacity-100' : 'opacity-0'} `} src={ imagen } alt='' />
+                    <Image className={` border-[16px] border-solid border-white border-opacity-30 inline-block transition-opacity duration-[618ms] ease-in-out ${fade ? 'opacity-100' : 'opacity-0'} `} src={ imagen } alt='' />
                 </p>
             </section>
             <section className={` bg-white `} id={`contacto`}>
