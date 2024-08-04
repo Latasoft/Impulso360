@@ -66,6 +66,7 @@ useEffect(() => {
 
   const { imagen } = clientesImagenes[currentClientesImagenesIndex];
 
+
     return (
         <main className={` relative text-white font-Roboto `}>
             <section className={` h-screen relative w-full bg-cover bg-center bg-black overflow-hidden  `} id={`inicio`}>
@@ -117,7 +118,7 @@ useEffect(() => {
                         </ul>
                     </div>
                     <div className={`flex items-center justify-center p-4 text-center bg-white bg-opacity-30 `}>
-                        <Image data-aos-duration="3618" data-aos-once="true"  data-aos='flip-left' className={` mx-auto `} src={porQueNosotros} alt='' />
+                        <Image priority data-aos-duration="3618" data-aos-once="true"  data-aos='flip-left' className={` mx-auto `} src={porQueNosotros} alt='' />
                     </div>
                 </div>
                 <div className={` relative px-4 pt-16`}>
