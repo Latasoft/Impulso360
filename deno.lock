@@ -60,12 +60,14 @@
     "packageJson": {
       "dependencies": [
         "npm:@netlify/blobs@^8.0.0",
+        "npm:aos@^2.3.4",
         "npm:autoprefixer@^10.4.18",
         "npm:blobshape@^1.0.0",
         "npm:bright@^0.8.5",
         "npm:daisyui@^4.12.8",
         "npm:eslint-config-next@14.2.5",
         "npm:eslint@8.57.0",
+        "npm:file-loader@^6.2.0",
         "npm:markdown-to-jsx@^7.4.5",
         "npm:next@14.2.5",
         "npm:postcss@^8.4.36",
