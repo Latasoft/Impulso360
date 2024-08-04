@@ -20,15 +20,34 @@ export function Header() {
         duration: 1200,
       });
     }, []);
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const navbar = document.getElementById('navbar');
+      const theHeight = window.innerHeight * 0.618;
+      if (window.scrollY >= theHeight) {
+        navbar.classList.remove('-translate-y-full');
+        navbar.classList.add('translate-y-0');
+      } else {
+        navbar.classList.remove('translate-y-0');
+        navbar.classList.add('-translate-y-full');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
     return (
-        <nav className=" fixed top-0 left-0 z-50 w-full font-Roboto py-6 bg-black bg-opacity-70 text-white">
+        <nav id="navbar" className="border-b-2 border-solid border-white border-opacity-30 fixed top-0 left-0 z-50 w-full font-Roboto py-3 bg-black bg-opacity-70 text-white transition-transform transform -translate-y-full ease-in-out duration-[618ms]">
 
             {!!navItems?.length && (
-                <ul className=" max-w-5xl mx-auto flex flex-wrap gap-x-6 justify-center items-center">
+                <ul className=" max-w-5xl mx-auto flex flex-wrap gap-x-8 justify-center items-center">
                     <li>
-                        <Link href="#inicio">
-                            <Image src={impulso360Logo} className=" align-middle w-auto lg:h-11 md:h-8 h-0 opacity-80 " alt="Netlify logo" />
-                        </Link>
+                       
+                            <Image src={impulso360Logo} className=" align-middle w-auto md:h-8 h-0 opacity-80 " alt="Netlify logo" />
+                        
                     </li>
                     {navItems.map((item, index) => (
                         <li key={index}>
