@@ -64,7 +64,7 @@ useEffect(() => {
   const { imagen } = clientesImagenes[currentClientesImagenesIndex];
 
     return (
-        <main className={` text-white font-Roboto `}>
+        <main className={` relative text-white font-Roboto `}>
             <section className={` h-screen relative w-full bg-cover bg-center bg-black overflow-hidden  `} >
                 <div className={` absolute top-0 left-0 w-full h-full `}>
                     <video poster='images/portadaFondoVideo.png' className='object-cover object-center h-full w-full' preload="auto" autoPlay="autoplay" muted loop playsInline>
@@ -78,16 +78,16 @@ useEffect(() => {
                     <p className={` max-w-5xl text-left w-full text-lg my-8 `}><Link className={` transition-all ease-in-out duration-200 rounded-full py-3 px-6 hover:bg-white bg-[#b10c72] hover:text-black text-white no-underline font-medium`} href='' >Conoce más aquí</Link></p>
                 </div>
             </section>
-            <section className={` pt-16 pb-0 lg:pb-4 bg-neutral-700 `}>
-                <h3 className={` max-w-5xl mx-auto transition-all ease-in-out duration-100 text-3xl lg:text-4xl font-semibold mb-8 text-center uppercase font-RobotoCondensed`}>Servicios integrales</h3>
+            <section className={` pt-16 bg-black `}>
+                <h3 className={` max-w-5xl mx-auto transition-all ease-in-out duration-100 text-3xl lg:text-4xl font-semibold mb-8 text-center uppercase font-RobotoCondensed opacity-80`}>Servicios integrales</h3>
                 {!!serviciosBlocks?.length && (
-                    <div className={` mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 `}>
+                    <div className={` mx-auto grid grid-cols-1 md:grid-cols-2 `}>
                         {serviciosBlocks.map((item, index) => (
                             <div key={index} className={` w-full bg-cover bg-center `} style={{ backgroundImage: `url('${item.fondoImagen.src}')`, }}>
-                                <div className={` py-28 px-4 md:px-4 lg:px-8 xl:px-16 text-center`}>
-                                    <div className={`py-6 bg-black bg-opacity-60`}>
-                                        <h3 className={` transition-all ease-in-out duration-100 text-3xl lg:text-4xl font-semibold mx-4 my-8 font-RobotoCondensed`}>{item.titulo}</h3>
-                                        <p className={` transition-all ease-in-out duration-100 text-lg lg:text-xl m-4 `}>{item.descripcion}</p>
+                                <div className={` flex flex-col items-center ${ index % 2 === 0 ? 'md:items-end' : 'md:items-start'} py-28 px-2 md:px-3 lg:px-6 xl:px-12 `}>
+                                    <div className={` py-6 bg-black bg-opacity-70 text-center max-w-md`}>
+                                        <h3 className={`transition-all ease-in-out duration-100 text-3xl lg:text-4xl font-semibold mx-4 my-8 font-RobotoCondensed opacity-80`}>{item.titulo}</h3>
+                                        <p className={`transition-all ease-in-out duration-100 text-lg lg:text-xl m-4 `}>{item.descripcion}</p>
                                         {/* <p className={`  text-lg mx-4 my-8 `}><Link className={` transition-all ease-in-out duration-200 rounded-full py-3 px-6 bg-white hover:bg-[#b10c72] text-black hover:text-white no-underline font-medium`} href='' >Cotiza aquí</Link></p> */}
                                     </div>
                                 </div>
@@ -96,10 +96,15 @@ useEffect(() => {
                     </div>
                 )}
             </section>
-            <section>
-                <div className={` max-w-5xl mx-auto grid md:grid-cols-2 grid-cols-1 `}>
-                    <div className={` p-8 `}>
-                        <h3 className={` text-[#b10c72] transition-all ease-in-out duration-100 text-3xl lg:text-4xl font-semibold font-RobotoCondensed mx-4 my-8 `}>¿Por qué nosotros?</h3>
+            <section className={` relative w-full bg-cover bg-center bg-black overflow-hidden `} >
+                <div className={` absolute top-0 left-0 w-full h-full `}>
+                    <video poster='images/portadaFondoVideo.png' className='object-cover object-center h-full w-full' preload="auto" autoPlay="autoplay" muted loop playsInline>
+                        <source src={portadaVideo} type="video/mp4" />
+                    </video>
+                </div>
+                <div className={` relative max-w-5xl mx-auto grid md:grid-cols-2 grid-cols-1 px-4 pt-16 `}>
+                    <div className={` p-4 bg-white bg-opacity-30 `}>
+                        <h3 className={` text-[#b10c72] transition-all ease-in-out duration-100 text-3xl lg:text-4xl font-semibold font-RobotoCondensed mx-4 mb-8 mt-4 `}>¿Por qué nosotros?</h3>
                         <ul className={` list-disc transition-all ease-in-out duration-100 text-lg ml-8 mr-4 `}>
                             <li className={` my-4 `}>Nuestro servicio incluye la implementación de un CRM de última generación que optimiza la gestión de leads y seguimientos. Con esta herramienta, podrás mejorar la eficiencia de tu empresa y aumentar tus oportunidades de venta.</li>
                             <li className={` my-4 `}>Colaboramos estrechamente contigo para comprender tus metas, identificar desafíos específicos y crear estrategias de marketing digital personalizadas.</li>
@@ -107,19 +112,12 @@ useEffect(() => {
                             <li className={` my-4 `}>Nos dedicamos a potenciar el crecimiento de tu empresa a través de servicios integrales de marketing digital y la implementación estratégica de CRM.</li>
                         </ul>
                     </div>
-                    <div className={`flex items-center justify-center p-8 text-center `}>
+                    <div className={`flex items-center justify-center p-4 text-center bg-white bg-opacity-30 `}>
                         <Image className={` mx-auto `} src={porQueNosotros} alt='' />
                     </div>
                 </div>
-                <div className={` bg-white `}>
-                    <p className={` max-w-5xl mx-auto px-8 py-16 text-center text-black font-semibold text-xl lg:text-2xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>Nos consideramos socios estratégicos de tu éxito. Nos dedicamos a impulsar tu presencia en línea, aumentar la visibilidad de tu marca y, en última instancia, a potenciar el crecimiento sostenible de tu negocio en el mundo digital.</p>
-                </div>
-            </section>
-            <section className={` relative w-full bg-cover bg-center bg-black overflow-hidden `} >
-                <div className={` absolute top-0 left-0 w-full h-full `}>
-                    <video poster='images/portadaFondoVideo.png' className='object-cover object-center h-full w-full' preload="auto" autoPlay="autoplay" muted loop playsInline>
-                        <source src={portadaVideo} type="video/mp4" />
-                    </video>
+                <div className={` relative px-4 pt-16`}>
+                    <p className={` opacity-80 max-w-5xl mx-auto px-8 text-center text-white font-light text-2xl lg:text-3xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>Nos consideramos socios estratégicos de tu éxito. Nos dedicamos a impulsar tu presencia en línea, aumentar la visibilidad de tu marca y, en última instancia, a potenciar el crecimiento sostenible de tu negocio en el mundo digital.</p>
                 </div>
                 <div className={` relative px-4 py-16`}>
                     <h2 className={` max-w-5xl mx-auto text-center w-full transition-all ease-in-out duration-100 text-3xl lg:text-3xl font-bold lg:my-2 opacity-80 uppercase`}>Nuestros tres pilares esenciales</h2>
@@ -127,34 +125,32 @@ useEffect(() => {
                     <div className={` mx-auto max-w-5xl grid md:grid-cols-3 grid-cols-1 mt-8 `}>
 
                         <div className={` mx-auto text-center w-full text-lg bg-white bg-opacity-30 p-8 `}>
-                            <h3 className={` text-2xl font-medium mb-4`}>Enfoque Estratégico Personalizado</h3>
+                            <h3 className={` text-2xl font-medium mb-4 opacity-80 `}>Enfoque Estratégico Personalizado</h3>
                             <p className={` text-lg`}>Entendemos que cada negocio es único. Trabajamos contigo para comprender tus objetivos, identificar desafíos específicos y desarrollar estrategias de marketing digital a medida. No ofrecemos soluciones genéricas; creamos estrategias que se alinean con tu visión y metas empresariales.</p>
                         </div>
                         <div className={` mx-auto text-center w-full text-lg bg-[#b10c72] bg-opacity-30 p-8 `}>
-                            <h3 className={` text-2xl font-medium mb-4`}>Innovación y Adaptabilidad Continuas</h3>
+                            <h3 className={` text-2xl font-medium mb-4 opacity-80`}>Innovación y Adaptabilidad Continuas</h3>
                             <p className={` text-lg`}>El marketing digital evoluciona constantemente. Nos comprometemos a mantenerte al tanto de las últimas tendencias y tecnologías. Nuestro equipo altamente capacitado se esfuerza por la innovación constante para asegurar que tu presencia en línea esté siempre a la par con las mejores prácticas y te dé una ventaja competitiva sostenible.</p>
                         </div>
                         <div className={` mx-auto text-center w-full text-lg bg-white bg-opacity-30 p-8 `}>
-                            <h3 className={` text-2xl font-medium mb-4`}>Resultados Medibles y Tangibles</h3>
+                            <h3 className={` text-2xl font-medium mb-4 opacity-80`}>Resultados Medibles y Tangibles</h3>
                             <p className={` text-lg`}>No nos conformamos con promesas vacías. Implementamos estrategias con datos y métricas concretas para asegurarnos de que cada campaña genere resultados tangibles.</p>
                         </div>
 
                     </div>
                 </div>
-            </section>
-            <section className={` bg-black py-16 `}>
-                <p className={` max-w-5xl mx-auto px-8 text-center text-white font-semibold text-xl lg:text-2xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>
+                <p className={` relative max-w-5xl mx-auto px-8 text-center text-white font-semibold text-xl lg:text-2xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>
                     Algunos de los clientes que han confiado en nosotros
                 </p>
-                <p className={` max-w-5xl mx-auto px-8 mt-8 text-center `}>
+                <p className={` relative max-w-5xl mx-auto px-8 mt-8 text-center pb-16 `}>
                                 <Image className={` mx-5 inline-block transition-opacity duration-[618ms] ease-in-out ${fade ? 'opacity-100' : 'opacity-0'} `} src={ imagen } alt='' />
                 </p>
             </section>
             <section className={` bg-white `}>
-                    <p className={` max-w-5xl mx-auto px-8 py-16 text-center text-black font-semibold text-xl lg:text-2xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>¿Aún no estás seguro? Contactanos para ofrecerte una asesoria personalizada y aclarar tus dudas.</p>
-            </section>
-            <section className={` bg-black `}>
-                <div className={` max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 `}>
+                    <p className={` max-w-5xl mx-auto px-8 pt-16 pb-4 text-center text-black font-semibold text-xl lg:text-2xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>
+                        ¿Aún no estás seguro? Contactanos para ofrecerte una asesoria personalizada y aclarar tus dudas.
+                    </p>
+                <div className={` max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 bg-black`}>
                     <div className={` w-full pt-6 md:py-6 text-center text-white font-semibold text-xl lg:text-2xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>
 
                         <form className={` mx-8 appearance-none text-left text-black font-normal text-lg lg:text-xl font-RobotoCondensed `}>
@@ -177,9 +173,7 @@ useEffect(() => {
                         <p className={` ml-8 mt-8`}><Link className={` inline-block w-12 mx-3`} href='/'><Image src={instagramIcono} alt='' /></Link><Link className={` inline-block w-12 mx-3`} href='/'><Image src={correoIcono} alt='' /></Link><Link className={` inline-block w-12 mx-3`} href='/'><Image src={telefonoIcono} alt='' /></Link></p>
                     </div>
                 </div>
-            </section>
-            <section className={` bg-white py-4`}>
-                <p className={` max-w-5xl mx-auto px-8 text-left text-black font-normal text-lg lg:text-xl font-RobotoCondensed`}>
+                <p className={` max-w-5xl mx-auto py-8 px-8 text-left text-black font-normal text-lg lg:text-xl font-RobotoCondensed`}>
                     ©Impulso360 todos los derechos reservados
                 </p>
             </section>
