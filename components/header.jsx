@@ -12,7 +12,7 @@ const navItems = [
 
 export function Header() {
     return (
-        <nav className=" fixed top-0 left-0 z-50 w-full font-Roboto py-6 bg-black text-white">
+        <nav className=" fixed top-0 left-0 z-50 w-full font-Roboto py-6 bg-black bg-opacity-70 text-white">
 
             {!!navItems?.length && (
                 <ul className=" max-w-5xl mx-auto flex flex-wrap gap-x-6 justify-center items-center">

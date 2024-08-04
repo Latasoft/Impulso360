@@ -42,6 +42,8 @@ import instagramIcono from 'public/images/instagram.png';
 import telefonoIcono from 'public/images/telefono.png';
 import correoIcono from 'public/images/email.png';
 
+import portadaVideo from 'public/images/portadaFondoVideo.mp4';
+
 export default function Page() {
 
 const [currentClientesImagenesIndex, setCurrentClientesImagenesIndex] = useState(0);
@@ -62,11 +64,11 @@ useEffect(() => {
   const { imagen } = clientesImagenes[currentClientesImagenesIndex];
 
     return (
-        <main className={` text-white font-Roboto  sm:mt-16  lg:mt-20`}>
+        <main className={` text-white font-Roboto `}>
             <section className={` h-screen relative w-full bg-cover bg-center bg-black overflow-hidden  `} >
                 <div className={` absolute top-0 left-0 w-full h-full `}>
                     <video poster='images/portadaFondoVideo.png' className='object-cover object-center h-full w-full' preload="auto" autoPlay="autoplay" muted loop playsInline>
-                        <source src='images/portadaFondoVideo.mp4' type="video/mp4" />
+                        <source src={portadaVideo} type="video/mp4" />
                     </video>
                 </div>
                 <div className={`  absolute top-0 left-0 w-full h-full bg-fucsiaAzulRatioFondo opacity-40 `} />
@@ -76,10 +78,10 @@ useEffect(() => {
                     <p className={` max-w-5xl text-left w-full text-lg my-8 `}><Link className={` transition-all ease-in-out duration-200 rounded-full py-3 px-6 hover:bg-white bg-[#b10c72] hover:text-black text-white no-underline font-medium`} href='' >Conoce más aquí</Link></p>
                 </div>
             </section>
-            <section className={` pt-16 pb-4 bg-neutral-700 `}>
+            <section className={` pt-16 pb-0 lg:pb-4 bg-neutral-700 `}>
                 <h3 className={` max-w-5xl mx-auto transition-all ease-in-out duration-100 text-3xl lg:text-4xl font-semibold mb-8 text-center uppercase font-RobotoCondensed`}>Servicios integrales</h3>
                 {!!serviciosBlocks?.length && (
-                    <div className={` mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-4`}>
+                    <div className={` mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 `}>
                         {serviciosBlocks.map((item, index) => (
                             <div key={index} className={` w-full bg-cover bg-center `} style={{ backgroundImage: `url('${item.fondoImagen.src}')`, }}>
                                 <div className={` py-28 px-4 md:px-4 lg:px-8 xl:px-16 text-center`}>
@@ -116,13 +118,14 @@ useEffect(() => {
             <section className={` relative w-full bg-cover bg-center bg-black overflow-hidden `} >
                 <div className={` absolute top-0 left-0 w-full h-full `}>
                     <video poster='images/portadaFondoVideo.png' className='object-cover object-center h-full w-full' preload="auto" autoPlay="autoplay" muted loop playsInline>
-                        <source src='images/portadaFondoVideo.mp4' type="video/mp4" />
+                        <source src={portadaVideo} type="video/mp4" />
                     </video>
                 </div>
                 <div className={` relative px-4 py-16`}>
                     <h2 className={` max-w-5xl mx-auto text-center w-full transition-all ease-in-out duration-100 text-3xl lg:text-3xl font-bold lg:my-2 opacity-80 uppercase`}>Nuestros tres pilares esenciales</h2>
 
                     <div className={` mx-auto max-w-5xl grid md:grid-cols-3 grid-cols-1 mt-8 `}>
+
                         <div className={` mx-auto text-center w-full text-lg bg-white bg-opacity-30 p-8 `}>
                             <h3 className={` text-2xl font-medium mb-4`}>Enfoque Estratégico Personalizado</h3>
                             <p className={` text-lg`}>Entendemos que cada negocio es único. Trabajamos contigo para comprender tus objetivos, identificar desafíos específicos y desarrollar estrategias de marketing digital a medida. No ofrecemos soluciones genéricas; creamos estrategias que se alinean con tu visión y metas empresariales.</p>
