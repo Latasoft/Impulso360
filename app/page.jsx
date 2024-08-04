@@ -28,7 +28,6 @@ import clientesD from 'public/images/clientesD.webp';
 import clientesE from 'public/images/clientesE.webp';
 import clientesF from 'public/images/clientesF.webp';
 
-
 const clientesImagenes = [
     { imagen: clientesA },
     { imagen: clientesB },
@@ -37,6 +36,11 @@ const clientesImagenes = [
     { imagen: clientesE },
     { imagen: clientesF }
 ]
+
+
+import instagramIcono from 'public/images/instagram.png';
+import telefonoIcono from 'public/images/telefono.png';
+import correoIcono from 'public/images/email.png';
 
 export default function Page() {
 
@@ -142,21 +146,32 @@ useEffect(() => {
                 <p className={` max-w-5xl mx-auto px-8 mt-8 text-center `}>
                                 <Image className={` mx-5 inline-block transition-opacity duration-[618ms] ease-in-out ${fade ? 'opacity-100' : 'opacity-0'} `} src={ imagen } alt='' />
                 </p>
-
             </section>
             <section className={` bg-white `}>
                     <p className={` max-w-5xl mx-auto px-8 py-16 text-center text-black font-semibold text-xl lg:text-2xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>¿Aún no estás seguro? Contactanos para ofrecerte una asesoria personalizada y aclarar tus dudas.</p>
             </section>
             <section className={` bg-black `}>
                 <div className={` max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 `}>
-                    <div className={` text-center text-white font-semibold text-xl lg:text-2xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>
+                    <div className={` w-full pt-6 md:py-6 text-center text-white font-semibold text-xl lg:text-2xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>
+
+                        <form className={` mx-8 appearance-none text-left text-black font-normal text-lg lg:text-xl font-RobotoCondensed `}>
+                            <input className={` block my-4 p-2 w-full appearance-none  `} type='text' placeholder='Nombre' />
+                            <input className={` block my-4 p-2 w-full appearance-none `} type='email' placeholder='Correo' />
+                            <input className={` block my-4 p-2 w-full appearance-none `} type='tel' placeholder='Teléfono' />
+                            <input className={` block my-4 p-2 w-full appearance-none `} type='text' placeholder='Asunto' />
+                            <textarea className={` block my-4 p-2 w-full appearance-none `} rows='8' placeholder='Mensaje' />
+                            <input className={` inline-block mt-4 appearance-none transition-all ease-in-out duration-200 rounded-full py-1 px-12 uppercase hover:bg-white bg-[#b10c72] hover:text-black text-white no-underline font-medium cursor-pointer `} type='Submit' value='Enviar' />
+                        </form>
+
+
                     </div>
-                    <div className={` not-italic text-left text-white font-normal text-lg lg:text-xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>
+                    <div className={` py-8 flex flex-col justify-center text-left text-white font-normal text-lg lg:text-xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>
                         <adress className={` not-italic `}>
-                            <p>Dirección: Av. Los Rosales 122, 28021, Madrid.</p>
-                            <p><Link className={` no-underline `} href='mailto:info@misitio.com'>Email: info@misitio.com</Link></p>
-                            <p><Link className={` no-underline `} href='tel:tel:914123456'>Teléfono: 914-123-456</Link></p>
+                            <p className={` ml-8 `}>Dirección: Av. Los Rosales 122, 28021, Madrid.</p>
+                            <p className={` ml-8 `}><Link className={` no-underline `} href='mailto:info@misitio.com'>Email: info@misitio.com</Link></p>
+                            <p className={` ml-8 `} ><Link className={` no-underline `} href='tel:tel:914123456'>Teléfono: 914-123-456</Link></p>
                         </adress>
+                        <p className={` ml-8 mt-8`}><Link className={` inline-block w-12 mx-3`} href='/'><Image src={instagramIcono} alt='' /></Link><Link className={` inline-block w-12 mx-3`} href='/'><Image src={correoIcono} alt='' /></Link><Link className={` inline-block w-12 mx-3`} href='/'><Image src={telefonoIcono} alt='' /></Link></p>
                     </div>
                 </div>
             </section>
