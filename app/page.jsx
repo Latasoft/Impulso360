@@ -66,7 +66,6 @@ useEffect(() => {
 
   const { imagen } = clientesImagenes[currentClientesImagenesIndex];
 
-
     return (
         <main className={` relative text-white font-Roboto `}>
             <section className={` h-screen relative w-full bg-cover bg-center bg-black overflow-hidden  `} id={`inicio`}>
