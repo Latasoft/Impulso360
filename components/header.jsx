@@ -17,7 +17,7 @@ const navItems = [
 export function Header() {
     useEffect(() => {
       AOS.init({
-        duration: 1200,
+        duration: 2000,
       });
     }, []);
 
