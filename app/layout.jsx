@@ -1,5 +1,6 @@
 import '../styles/globals.css';
 import { Header } from '../components/header';
+import { Footer } from '../components/footer';
 
 export const metadata = {
     title: 'Impulso 360'
@@ -13,6 +14,7 @@ export default function RootLayout({ children }) {
             <body className="antialiased text-white bg-black">
                 <Header />
                 {children}
+                <Footer />
             </body>
         </html>
     );

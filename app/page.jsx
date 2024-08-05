@@ -79,8 +79,8 @@ export default function Page() {
                 <div className={` relative mx-auto flex flex-col w-full h-full items-center justify-center px-4`}>
                     <h2 data-aos-once="true" data-aos='fade-right' className={` max-w-5xl text-left w-full transition-all ease-in-out text-5xl md:text-6xl lg:text-7xl font-bold lg:my-0 opacity-80`}>En<Image className={` inline-block h-16 md:h-20 lg:h-24 w-auto `} priority src={impulso360Logo} alt='' /></h2>
                     <h3 data-aos-once="true" data-aos='fade-right' className={` font-RobotoCondensed max-w-5xl text-left w-full transition-all ease-in-out text-2xl md:text-3xl lg:text-4xl font-light lg:my-0 opacity-80 `}>comienza tu transformación digital hoy</h3>
-                    <p data-aos-once="true"  data-aos='fade-right' className={` max-w-5xl text-left w-full text-lg mt-3 md:mt-4 lg:mt-6 `}><Link className={` inline-block transition-all ease-in-out duration-200 text-white no-underline font-medium opacity-80 text-lg lg:text-xl hover:translate-y-1 `} href='#serviciosIntegrales' ><Image className={` inline-block mr-3 h-5 w-auto `} src={anglesDown} alt='Angles Down' /> Conoce más aquí <Image className={` inline-block ml-3 h-5 w-auto`} src={anglesDown} alt='Angles Down' /></Link></p>
-                {/* <p className={` max-w-5xl text-left w-full text-lg my-8 `}><Link className={` transition-all ease-in-out duration-200 rounded-full py-3 px-6 hover:bg-white bg-[#b10c72] hover:text-black text-white no-underline font-medium`} href='' >Conoce más aquí</Link></p> */}
+                    <p data-aos-once="true" data-aos='fade-right' className={` max-w-5xl text-left w-full text-lg mt-3 md:mt-4 lg:mt-6 `}><Link className={` inline-block transition-all ease-in-out duration-200 text-white no-underline font-medium opacity-80 text-lg lg:text-xl hover:translate-y-1 `} href='#serviciosIntegrales' ><Image className={` inline-block mr-3 h-5 w-auto `} src={anglesDown} alt='Angles Down' /> Conoce más aquí <Image className={` inline-block ml-3 h-5 w-auto`} src={anglesDown} alt='Angles Down' /></Link></p>
+                    {/* <p className={` max-w-5xl text-left w-full text-lg my-8 `}><Link className={` transition-all ease-in-out duration-200 rounded-full py-3 px-6 hover:bg-white bg-[#b10c72] hover:text-black text-white no-underline font-medium`} href='' >Conoce más aquí</Link></p> */}
                 </div>
             </section>
             <section className={` pt-16 bg-black `} id={`serviciosIntegrales`}>
@@ -89,8 +89,8 @@ export default function Page() {
                     <div className={` mx-auto grid grid-cols-1 md:grid-cols-2 `}>
                         {serviciosBlocks.map((item, index) => (
                             <div key={index} className={` w-full bg-cover bg-center `} style={{ backgroundImage: `url('${item.fondoImagen.src}')`, }}>
-                                <div className={` transition-all ease-in-out duration-700 flex flex-col items-center ${ index % 2 === 0 ? 'md:items-end' : 'md:items-start'} py-28 px-2 md:px-3 lg:px-6 xl:px-12 `}>
-                                    <div data-aos-once="true"  data-aos={index % 2 === 0 ? 'fade-up' : 'fade-up'} className={` transition-all ease-in-out py-8 bg-black bg-opacity-70 text-center max-w-md `} >
+                                <div className={` transition-all ease-in-out duration-700 flex flex-col items-center ${index % 2 === 0 ? 'md:items-end' : 'md:items-start'} py-28 px-2 md:px-3 lg:px-6 xl:px-12 `}>
+                                    <div data-aos-once="true" data-aos={index % 2 === 0 ? 'fade-up' : 'fade-up'} className={` transition-all ease-in-out py-8 bg-black bg-opacity-70 text-center max-w-md `} >
                                         <h3 className={`transition-all ease-in-out text-3xl lg:text-4xl font-semibold mx-4 mb-8 font-RobotoCondensed opacity-80`}>{item.titulo}</h3>
                                         <p className={`transition-all ease-in-out text-lg lg:text-xl mx-4 `}>{item.descripcion}</p>
                                         {/* <p className={`  text-lg mx-4 my-8 `}><Link className={` transition-all ease-in-out duration-200 rounded-full py-3 px-6 bg-white hover:bg-[#b10c72] text-black hover:text-white no-underline font-medium`} href='' >Cotiza aquí</Link></p> */}
@@ -111,33 +111,33 @@ export default function Page() {
                     <div className={` p-4 bg-white bg-opacity-30 `}>
                         <h3 className={` text-[#b10c72] transition-all ease-in-out text-3xl lg:text-4xl font-semibold font-RobotoCondensed mx-4 mb-8 mt-4 `}>¿Por qué nosotros?</h3>
                         <ul className={` list-disc transition-all ease-in-out text-lg ml-8 mr-4 `}>
-                            <li data-aos-once="true"  data-aos='fade-right' className={` my-4 `}>Nuestro servicio incluye la implementación de un CRM de última generación que optimiza la gestión de leads y seguimientos. Con esta herramienta, podrás mejorar la eficiencia de tu empresa y aumentar tus oportunidades de venta.</li>
-                            <li data-aos-once="true"  data-aos='fade-right' className={` my-4 `}>Colaboramos estrechamente contigo para comprender tus metas, identificar desafíos específicos y crear estrategias de marketing digital personalizadas.</li>
-                            <li data-aos-once="true"  data-aos='fade-right' className={` my-4 `}>No brindamos soluciones estándar, sino que diseñamos estrategias que se ajustan de forma precisa a tu visión y objetivos comerciales.</li>
-                            <li data-aos-once="true"  data-aos='fade-right' className={` my-4 `}>Nos dedicamos a potenciar el crecimiento de tu empresa a través de servicios integrales de marketing digital y la implementación estratégica de CRM.</li>
+                            <li data-aos-once="true" data-aos='fade-right' className={` my-4 `}>Nuestro servicio incluye la implementación de un CRM de última generación que optimiza la gestión de leads y seguimientos. Con esta herramienta, podrás mejorar la eficiencia de tu empresa y aumentar tus oportunidades de venta.</li>
+                            <li data-aos-once="true" data-aos='fade-right' className={` my-4 `}>Colaboramos estrechamente contigo para comprender tus metas, identificar desafíos específicos y crear estrategias de marketing digital personalizadas.</li>
+                            <li data-aos-once="true" data-aos='fade-right' className={` my-4 `}>No brindamos soluciones estándar, sino que diseñamos estrategias que se ajustan de forma precisa a tu visión y objetivos comerciales.</li>
+                            <li data-aos-once="true" data-aos='fade-right' className={` my-4 `}>Nos dedicamos a potenciar el crecimiento de tu empresa a través de servicios integrales de marketing digital y la implementación estratégica de CRM.</li>
                         </ul>
                     </div>
                     <div className={`flex items-center justify-center p-4 text-center bg-white bg-opacity-30 `}>
-                        <Image priority data-aos-once="true"  data-aos='flip-left' className={` mx-auto `} src={porQueNosotros} alt='' />
+                        <Image priority data-aos-once="true" data-aos='flip-left' className={` mx-auto `} src={porQueNosotros} alt='' />
                     </div>
                 </div>
                 <div className={` relative px-4 pt-16`}>
-                    <p data-aos-once="true"  data-aos='fade' className={` opacity-80 max-w-5xl mx-auto px-8 text-center text-white font-light text-2xl lg:text-3xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>Nos consideramos socios estratégicos de tu éxito. Nos dedicamos a impulsar tu presencia en línea, aumentar la visibilidad de tu marca y, en última instancia, a potenciar el crecimiento sostenible de tu negocio en el mundo digital.</p>
+                    <p data-aos-once="true" data-aos='fade' className={` opacity-80 max-w-5xl mx-auto px-8 text-center text-white font-light text-2xl lg:text-3xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>Nos consideramos socios estratégicos de tu éxito. Nos dedicamos a impulsar tu presencia en línea, aumentar la visibilidad de tu marca y, en última instancia, a potenciar el crecimiento sostenible de tu negocio en el mundo digital.</p>
                 </div>
                 <div className={` relative px-4 py-16`}>
                     <h2 className={` max-w-5xl mx-auto text-center w-full transition-all ease-in-out duration-100 text-3xl lg:text-3xl font-bold lg:my-2 opacity-80 uppercase`}>Nuestros tres pilares esenciales</h2>
 
                     <div className={` mx-auto max-w-5xl grid md:grid-cols-3 grid-cols-1 mt-8 `}>
 
-                        <div data-aos-once="true"  data-aos='fade-right' className={` mx-auto text-center w-full text-lg bg-white bg-opacity-30 p-8 `}>
+                        <div data-aos-once="true" data-aos='fade-right' className={` mx-auto text-center w-full text-lg bg-white bg-opacity-30 p-8 `}>
                             <h3 className={` text-2xl font-medium mb-4 opacity-80 `}>Enfoque Estratégico Personalizado</h3>
                             <p className={` text-lg`}>Entendemos que cada negocio es único. Trabajamos contigo para comprender tus objetivos, identificar desafíos específicos y desarrollar estrategias de marketing digital a medida. No ofrecemos soluciones genéricas; creamos estrategias que se alinean con tu visión y metas empresariales.</p>
                         </div>
-                        <div data-aos-once="true"  data-aos='fade-right' className={` mx-auto text-center w-full text-lg bg-[#b10c72] bg-opacity-30 p-8 `}>
+                        <div data-aos-once="true" data-aos='fade-right' className={` mx-auto text-center w-full text-lg bg-[#b10c72] bg-opacity-30 p-8 `}>
                             <h3 className={` text-2xl font-medium mb-4 opacity-80`}>Innovación y Adaptabilidad Continuas</h3>
                             <p className={` text-lg`}>El marketing digital evoluciona constantemente. Nos comprometemos a mantenerte al tanto de las últimas tendencias y tecnologías. Nuestro equipo altamente capacitado se esfuerza por la innovación constante para asegurar que tu presencia en línea esté siempre a la par con las mejores prácticas y te dé una ventaja competitiva sostenible.</p>
                         </div>
-                        <div data-aos-once="true"  data-aos='fade-right' className={` mx-auto text-center w-full text-lg bg-white bg-opacity-30 p-8 `}>
+                        <div data-aos-once="true" data-aos='fade-right' className={` mx-auto text-center w-full text-lg bg-white bg-opacity-30 p-8 `}>
                             <h3 className={` text-2xl font-medium mb-4 opacity-80`}>Resultados Medibles y Tangibles</h3>
                             <p className={` text-lg`}>No nos conformamos con promesas vacías. Implementamos estrategias con datos y métricas concretas para asegurarnos de que cada campaña genere resultados tangibles.</p>
                         </div>
@@ -148,17 +148,17 @@ export default function Page() {
                     Algunos de los clientes que han confiado en nosotros
                 </p>
                 <p className={` relative max-w-5xl mx-auto px-8 mt-8 text-center pb-16 `}>
-                    <Image className={` border-[16px] border-solid border-white border-opacity-30 inline-block transition-opacity duration-[618ms] ease-in-out ${fade ? 'opacity-100' : 'opacity-0'} `} src={ imagen } alt='' />
+                    <Image className={` border-[16px] border-solid border-white border-opacity-30 inline-block transition-opacity duration-[618ms] ease-in-out ${fade ? 'opacity-100' : 'opacity-0'} `} src={imagen} alt='' />
                 </p>
             </section>
-            <section className={` relative bg-white `} id={`contacto`}>
-            <div className={`  absolute top-0 left-0 w-full h-full bg-fucsiaAzulRatioFondo opacity-5 `} />
-            <div className={`  absolute top-0 left-0 w-full h-full opacity-100 bg-repeat `} style={{ backgroundImage: `url('images/noise.png')` }} />
+            <section className={` relative bg-fucsiaAzulRatioFondo lg:pb-24 `} id={`contacto`} >
+                <div className={`  absolute top-0 left-0 w-full h-full bg-white opacity-80 `} />
+                <div className={`  absolute top-0 left-0 w-full h-full opacity-100 bg-repeat `} style={{ backgroundImage: `url('images/noise.png')` }} />
 
-                    <p className={` relative max-w-5xl mx-auto px-8 pt-16 pb-4 text-center text-black font-semibold text-xl lg:text-2xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>
-                        ¿Aún no estás seguro? Contactanos para ofrecerte una asesoria personalizada y aclarar tus dudas.
-                    </p>
-                <div className={` relative max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 bg-black bg-opacity-50`}>
+                <p className={` relative max-w-5xl mx-auto px-8 pt-16 pb-4 text-center text-black font-semibold text-xl lg:text-2xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>
+                    ¿Aún no estás seguro? Contactanos para ofrecerte una asesoria personalizada y aclarar tus dudas.
+                </p>
+                <div className={` relative max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 bg-black bg-opacity-60 `}>
                     <div className={` w-full pt-6 md:py-6 text-center text-white font-semibold text-xl lg:text-2xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>
 
                         <form className={` mx-8 appearance-none text-left text-black font-normal text-lg lg:text-xl font-RobotoCondensed `} action='https://api.web3forms.com/submit' method='post'>
@@ -180,9 +180,6 @@ export default function Page() {
                         <p className={` ml-8 mt-8`}><Link className={` inline-block w-12 mx-3`} href='/'><Image src={instagramIcono} alt='' /></Link><Link className={` inline-block w-12 mx-3`} href='/'><Image src={correoIcono} alt='' /></Link><Link className={` inline-block w-12 mx-3`} href='/'><Image src={telefonoIcono} alt='' /></Link></p>
                     </div>
                 </div>
-                <p className={` relative max-w-5xl mx-auto py-8 px-8 text-left text-black font-normal text-lg lg:text-xl font-RobotoCondensed`}>
-                    ©Impulso360 todos los derechos reservados
-                </p>
             </section>
         </main>
     );
