@@ -27,11 +27,11 @@ export function Header() {
       const navbar = document.getElementById('navbar');
       const theHeight = window.innerHeight * 0.618;
       if (window.scrollY >= theHeight) {
-        navbar.classList.remove('-translate-y-full');
-        navbar.classList.add('translate-y-0');
+        navbar.classList.remove('-translate-y-full','opacity-0');
+        navbar.classList.add('translate-y-0','opacity-100');
       } else {
-        navbar.classList.remove('translate-y-0');
-        navbar.classList.add('-translate-y-full');
+        navbar.classList.remove('translate-y-0', 'opacity-100');
+        navbar.classList.add('-translate-y-full', 'opacity-0');
       }
     };
 
@@ -40,7 +40,7 @@ export function Header() {
   }, []);
 
     return (
-        <nav id="navbar" className="border-b-2 border-solid border-white border-opacity-30 fixed top-0 left-0 z-50 w-full font-Roboto py-3 bg-black bg-opacity-70 text-white transition-transform transform -translate-y-full ease-in-out duration-[618ms]">
+        <nav id="navbar" className="opacity-0 border-b-2 border-solid border-white border-opacity-30 fixed top-0 left-0 z-50 w-full font-Roboto py-3 bg-black bg-opacity-70 text-white transition-transform transform -translate-y-full ease-in-out duration-[618ms]">
 
             {!!navItems?.length && (
                 <ul className=" max-w-5xl mx-auto flex flex-wrap gap-x-8 justify-center items-center">
