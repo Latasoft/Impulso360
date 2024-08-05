@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from 'react';
+
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -49,22 +50,22 @@ import portadaVideo from 'public/images/portadaFondoVideo.mp4';
 
 export default function Page() {
 
-const [currentClientesImagenesIndex, setCurrentClientesImagenesIndex] = useState(0);
-const [fade, setFade] = useState(true);
+    const [currentClientesImagenesIndex, setCurrentClientesImagenesIndex] = useState(0);
+    const [fade, setFade] = useState(true);
 
-useEffect(() => {
-    const interval = setInterval(() => {
-      setFade(false);
-      setTimeout(() => {
-        setCurrentClientesImagenesIndex((prevIndex) => (prevIndex + 1) % clientesImagenes.length);
-        setFade(true);
-      }, 618);
-    }, 2382);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setFade(false);
+            setTimeout(() => {
+                setCurrentClientesImagenesIndex((prevIndex) => (prevIndex + 1) % clientesImagenes.length);
+                setFade(true);
+            }, 618);
+        }, 2382);
 
-    return () => clearInterval(interval);
-  }, []);
+        return () => clearInterval(interval);
+    }, []);
 
-  const { imagen } = clientesImagenes[currentClientesImagenesIndex];
+    const { imagen } = clientesImagenes[currentClientesImagenesIndex];
 
     return (
         <main className={` relative text-white font-Roboto `}>
@@ -150,11 +151,14 @@ useEffect(() => {
                     <Image className={` border-[16px] border-solid border-white border-opacity-30 inline-block transition-opacity duration-[618ms] ease-in-out ${fade ? 'opacity-100' : 'opacity-0'} `} src={ imagen } alt='' />
                 </p>
             </section>
-            <section className={` bg-white `} id={`contacto`}>
-                    <p className={` max-w-5xl mx-auto px-8 pt-16 pb-4 text-center text-black font-semibold text-xl lg:text-2xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>
+            <section className={` relative bg-white `} id={`contacto`}>
+            <div className={`  absolute top-0 left-0 w-full h-full bg-fucsiaAzulRatioFondo opacity-5 `} />
+            <div className={`  absolute top-0 left-0 w-full h-full opacity-100 bg-repeat `} style={{ backgroundImage: `url('images/noise.png')` }} />
+
+                    <p className={` relative max-w-5xl mx-auto px-8 pt-16 pb-4 text-center text-black font-semibold text-xl lg:text-2xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>
                         ¿Aún no estás seguro? Contactanos para ofrecerte una asesoria personalizada y aclarar tus dudas.
                     </p>
-                <div className={` max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 bg-black`}>
+                <div className={` relative max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 bg-black bg-opacity-50`}>
                     <div className={` w-full pt-6 md:py-6 text-center text-white font-semibold text-xl lg:text-2xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>
 
                         <form className={` mx-8 appearance-none text-left text-black font-normal text-lg lg:text-xl font-RobotoCondensed `} action='https://api.web3forms.com/submit' method='post'>
@@ -166,7 +170,6 @@ useEffect(() => {
                             <input className={` inline-block mt-4 appearance-none transition-all ease-in-out duration-200 rounded-full py-1 px-12 uppercase hover:bg-white bg-[#b10c72] hover:text-black text-white no-underline font-medium cursor-pointer `} type='submit' value='Enviar' />
                         </form>
 
-
                     </div>
                     <div className={` py-8 flex flex-col justify-center text-left text-white font-normal text-lg lg:text-xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>
                         <adress className={` not-italic `}>
@@ -177,7 +180,7 @@ useEffect(() => {
                         <p className={` ml-8 mt-8`}><Link className={` inline-block w-12 mx-3`} href='/'><Image src={instagramIcono} alt='' /></Link><Link className={` inline-block w-12 mx-3`} href='/'><Image src={correoIcono} alt='' /></Link><Link className={` inline-block w-12 mx-3`} href='/'><Image src={telefonoIcono} alt='' /></Link></p>
                     </div>
                 </div>
-                <p className={` max-w-5xl mx-auto py-8 px-8 text-left text-black font-normal text-lg lg:text-xl font-RobotoCondensed`}>
+                <p className={` relative max-w-5xl mx-auto py-8 px-8 text-left text-black font-normal text-lg lg:text-xl font-RobotoCondensed`}>
                     ©Impulso360 todos los derechos reservados
                 </p>
             </section>
