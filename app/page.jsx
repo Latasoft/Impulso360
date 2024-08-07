@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react';
 
 import Link from 'next/link';
-import Image from 'next/image';
 
 import impulso360Logo from 'public/images/logob.png'
 import anglesDown from 'public/images/angles-down.svg'
@@ -77,9 +76,9 @@ export default function Page() {
                 </div>
                 <div className={`  absolute top-0 left-0 w-full h-full bg-fucsiaAzulRatioFondo opacity-40 `} />
                 <div className={` relative mx-auto flex flex-col w-full h-full items-center justify-center px-4`}>
-                    <h2 data-aos-once="true" data-aos='fade-right' className={` max-w-5xl text-left w-full transition-all ease-in-out text-5xl md:text-6xl lg:text-7xl font-bold lg:my-0 opacity-80`}>En<Image className={` inline-block h-16 md:h-20 lg:h-24 w-auto `} priority src={impulso360Logo} alt='' /></h2>
+                    <h2 data-aos-once="true" data-aos='fade-right' className={` max-w-5xl text-left w-full transition-all ease-in-out text-5xl md:text-6xl lg:text-7xl font-bold lg:my-0 opacity-80`}>En<img className={` inline-block h-16 md:h-20 lg:h-24 w-auto `} priority src={impulso360Logo.src} alt='' /></h2>
                     <h3 data-aos-once="true" data-aos='fade-right' className={` font-RobotoCondensed max-w-5xl text-left w-full transition-all ease-in-out text-2xl md:text-3xl lg:text-4xl font-light lg:my-0 opacity-80 `}>comienza tu transformación digital hoy</h3>
-                    <p data-aos-once="true" data-aos='fade-right' className={` max-w-5xl text-left w-full text-lg mt-3 md:mt-4 lg:mt-6 `}><Link className={` inline-block transition-all ease-in-out duration-200 text-white no-underline font-medium opacity-80 text-lg lg:text-xl hover:translate-y-1 `} href='#serviciosIntegrales' ><Image className={` inline-block mr-3 h-5 w-auto `} src={anglesDown} alt='Angles Down' /> Conoce más aquí <Image className={` inline-block ml-3 h-5 w-auto`} src={anglesDown} alt='Angles Down' /></Link></p>
+                    <p data-aos-once="true" data-aos='fade-right' className={` max-w-5xl text-left w-full text-lg mt-3 md:mt-4 lg:mt-6 `}><Link className={` inline-block transition-all ease-in-out duration-200 text-white no-underline font-medium opacity-80 text-lg lg:text-xl hover:translate-y-1 `} href='#serviciosIntegrales' ><img className={` inline-block mr-3 h-5 w-auto `} src={anglesDown.src} alt='Angles Down' /> Conoce más aquí <img className={` inline-block ml-3 h-5 w-auto`} src={anglesDown.src} alt='Angles Down' /></Link></p>
                     {/* <p className={` max-w-5xl text-left w-full text-lg my-8 `}><Link className={` transition-all ease-in-out duration-200 rounded-full py-3 px-6 hover:bg-white bg-[#b10c72] hover:text-black text-white no-underline font-medium`} href='' >Conoce más aquí</Link></p> */}
                 </div>
             </section>
@@ -118,7 +117,7 @@ export default function Page() {
                         </ul>
                     </div>
                     <div className={`flex items-center justify-center p-4 text-center bg-white bg-opacity-30 `}>
-                        <Image priority data-aos-once="true" data-aos='flip-left' className={` mx-auto `} src={porQueNosotros} alt='' />
+                        <img priority data-aos-once="true" data-aos='flip-left' className={` mx-auto `} src={porQueNosotros.src} alt='' />
                     </div>
                 </div>
                 <div className={` relative px-4 pt-16`}>
@@ -148,7 +147,7 @@ export default function Page() {
                     Algunos de los clientes que han confiado en nosotros
                 </p>
                 <p className={` relative max-w-5xl mx-auto px-8 mt-8 text-center pb-16 `}>
-                    <Image className={` border-[16px] border-solid border-white border-opacity-30 inline-block transition-opacity duration-[618ms] ease-in-out ${fade ? 'opacity-100' : 'opacity-0'} `} src={imagen} alt='' />
+                    <img className={` border-[16px] border-solid border-white border-opacity-30 inline-block transition-opacity duration-[618ms] ease-in-out ${fade ? 'opacity-100' : 'opacity-0'} `} src={imagen.src} alt='' />
                 </p>
             </section>
             <section className={` relative bg-fucsiaAzulRatioFondo lg:pb-24 `} id={`contacto`} >
@@ -177,7 +176,7 @@ export default function Page() {
                             <p className={` ml-8 `}><Link className={` no-underline `} href='mailto:info@misitio.com'>Email: info@misitio.com</Link></p>
                             <p className={` ml-8 `} ><Link className={` no-underline `} href='tel:tel:914123456'>Teléfono: 914-123-456</Link></p>
                         </adress>
-                        <p className={` ml-8 mt-8`}><Link className={` inline-block w-12 mx-3`} href='/'><Image src={instagramIcono} alt='' /></Link><Link className={` inline-block w-12 mx-3`} href='/'><Image src={correoIcono} alt='' /></Link><Link className={` inline-block w-12 mx-3`} href='/'><Image src={telefonoIcono} alt='' /></Link></p>
+                        <p className={` ml-8 mt-8`}><Link className={` inline-block w-12 mx-3`} href='/'><img src={instagramIcono.src} alt='' /></Link><Link className={` inline-block w-12 mx-3`} href='/'><img src={correoIcono.src} alt='' /></Link><Link className={` inline-block w-12 mx-3`} href='/'><img src={telefonoIcono.src} alt='' /></Link></p>
                     </div>
                 </div>
             </section>

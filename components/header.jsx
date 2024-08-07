@@ -1,5 +1,4 @@
 "use client";
-import Image from 'next/image';
 import Link from 'next/link';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
@@ -47,7 +46,7 @@ export function Header() {
                 <ul className=" max-w-5xl mx-auto flex flex-wrap gap-x-8 justify-center items-center">
                     <li>
                        
-                            <Image src={impulso360Logo} className=" align-middle w-auto md:h-8 h-0 opacity-80 " alt="Netlify logo" />
+                            <img src={impulso360Logo.src} className=" align-middle w-auto md:h-8 h-0 opacity-80 " alt="Netlify logo" />
                         
                     </li>
                     {navItems.map((item, index) => (
