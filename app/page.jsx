@@ -1,109 +1,52 @@
-"use client";
-import { useEffect, useState } from 'react';
 
 import Link from 'next/link';
 
-import impulso360Logo from 'public/images/logob.png'
-import anglesDown from 'public/images/angles-down.svg'
+import ServiciosBlock from 'components/serviciosblock'; 
+import Clientesimagenes from 'components/Clientesimagenes';
+
+import impulso360Logo from 'public/images/logob.png';
+import anglesDown from 'public/images/angles-down.svg';
 
 import porQueNosotros from 'public/images/porQueNosotros.webp';
-import portadaFondoB from 'public/images/portadaFondoB.jpg';
-import portadaFondoC from 'public/images/portadaFondoC.jpg';
-import portadaFondoD from 'public/images/portadaFondoD.jpg';
-import portadaFondoE from 'public/images/portadaFondoE.jpg';
-import portadaFondoF from 'public/images/portadaFondoF.jpg';
-import portadaFondoG from 'public/images/portadaFondoG.jpg';
-
-const serviciosBlocks = [
-    { fondoImagen: portadaFondoB, titulo: 'Estrategias digitales', descripcion: 'Transformamos tus metas comerciales en estrategias digitales efectivas. Desde la identificación del público objetivo hasta análisis competitivo, creamos planes personalizados para tu éxito.' },
-    { fondoImagen: portadaFondoC, titulo: 'SEO (Optimización de Motores de Búsqueda)', descripcion: 'Mejoramos tu visibilidad online con investigación de palabras clave, optimización de contenido y construcción de enlaces estratégicos. Aumenta tu posición en los motores de búsqueda y atrae a tu audiencia objetivo.' },
-    { fondoImagen: portadaFondoD, titulo: 'SEM (Marketing en Motores de Búsqueda)', descripcion: 'Gestionamos campañas publicitarias en Google, optimizando presupuestos y enfocándonos en estrategias de palabras clave. Aumenta la visibilidad y atrae clientes potenciales de manera efectiva.' },
-    { fondoImagen: portadaFondoE, titulo: 'Redes Sociales', descripcion: 'Gestionamos tus perfiles en redes sociales, desarrollamos estrategias de contenido social y ejecutamos campañas publicitarias. Conéctate con tu audiencia, y ahora, también optimizamos tus campañas de pago para maximizar el alcance y la conversión.' },
-    { fondoImagen: portadaFondoF, titulo: 'Email Marketing', descripcion: 'Diseñamos y ejecutamos campañas de email marketing impactantes. Mantén a tus clientes informados, comprometidos y listos para convertirse.' },
-    { fondoImagen: portadaFondoG, titulo: 'Diseño y Desarrollo Web', descripcion: 'Creamos sitios web responsivos y optimizados para brindar una experiencia excepcional al usuario. Desde la velocidad hasta la integración de tecnologías, garantizamos una presencia online efectiva.' }
-]
-
-
-import clientesA from 'public/images/clientesA.png';
-import clientesB from 'public/images/clientesB.png';
-import clientesC from 'public/images/clientesC.webp';
-import clientesD from 'public/images/clientesD.webp';
-import clientesE from 'public/images/clientesE.webp';
-import clientesF from 'public/images/clientesF.webp';
-
-const clientesImagenes = [
-    { imagen: clientesA },
-    { imagen: clientesB },
-    { imagen: clientesC },
-    { imagen: clientesD },
-    { imagen: clientesE },
-    { imagen: clientesF }
-]
-
 
 import instagramIcono from 'public/images/instagram.png';
 import telefonoIcono from 'public/images/telefono.png';
 import correoIcono from 'public/images/email.png';
 
-import portadaVideo from 'public/images/portadaFondoVideo.mp4';
+const pilaresBlocks = [
+    { titulo: 'Enfoque Estratégico Personalizado', texto: 'Entendemos que cada negocio es único. Trabajamos contigo para comprender tus objetivos, identificar desafíos específicos y desarrollar estrategias de marketing digital a medida. No ofrecemos soluciones genéricas; creamos estrategias que se alinean con tu visión y metas empresariales.' },
+    { titulo: 'Innovación y Adaptabilidad Continuas', texto: 'El marketing digital evoluciona constantemente. Nos comprometemos a mantenerte al tanto de las últimas tendencias y tecnologías. Nuestro equipo altamente capacitado se esfuerza por la innovación constante para asegurar que tu presencia en línea esté siempre a la par con las mejores prácticas y te dé una ventaja competitiva sostenible.' },
+    { titulo: 'Resultados Medibles y Tangibles', texto: 'No nos conformamos con promesas vacías. Implementamos estrategias con datos y métricas concretas para asegurarnos de que cada campaña genere resultados tangibles.' }
+];
 
 export default function Page() {
 
-    const [currentClientesImagenesIndex, setCurrentClientesImagenesIndex] = useState(0);
-    const [fade, setFade] = useState(true);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setFade(false);
-            setTimeout(() => {
-                setCurrentClientesImagenesIndex((prevIndex) => (prevIndex + 1) % clientesImagenes.length);
-                setFade(true);
-            }, 618);
-        }, 2382);
-
-        return () => clearInterval(interval);
-    }, []);
-
-    const { imagen } = clientesImagenes[currentClientesImagenesIndex];
-
     return (
         <main className={` relative text-white font-Roboto `}>
+
             <section className={` h-screen relative w-full bg-cover bg-center bg-black overflow-hidden  `} id={`inicio`}>
                 <div className={` absolute top-0 left-0 w-full h-full `}>
                     <video poster='images/portadaFondoVideo.png' className='object-cover object-center h-full w-full' preload="auto" autoPlay="autoplay" muted loop playsInline>
-                        <source src={portadaVideo} type="video/mp4" />
+                        <source src='images/portadaFondoVideo.mp4' type="video/mp4" />
                     </video>
                 </div>
                 <div className={`  absolute top-0 left-0 w-full h-full bg-fucsiaAzulRatioFondo opacity-40 `} />
                 <div className={` relative mx-auto flex flex-col w-full h-full items-center justify-center px-4`}>
-                    <h2 data-aos-once="true" data-aos='fade-right' className={` max-w-5xl text-left w-full transition-all ease-in-out text-5xl md:text-6xl lg:text-7xl font-bold lg:my-0 opacity-80`}>En<img className={` inline-block h-16 md:h-20 lg:h-24 w-auto `} priority src={impulso360Logo.src} alt='' /></h2>
+                    <h2 data-aos-once="true" data-aos='fade-right' className={` max-w-5xl text-left w-full transition-all ease-in-out text-5xl md:text-6xl lg:text-7xl font-bold lg:my-0 opacity-80`}>En<img className={` inline-block h-16 md:h-20 lg:h-24 w-auto `}  src={impulso360Logo.src} alt='' /></h2>
                     <h3 data-aos-once="true" data-aos='fade-right' className={` font-RobotoCondensed max-w-5xl text-left w-full transition-all ease-in-out text-2xl md:text-3xl lg:text-4xl font-light lg:my-0 opacity-80 `}>comienza tu transformación digital hoy</h3>
                     <p data-aos-once="true" data-aos='fade-right' className={` max-w-5xl text-left w-full text-lg mt-3 md:mt-4 lg:mt-6 `}><Link className={` inline-block transition-all ease-in-out duration-200 text-white no-underline font-medium opacity-80 text-lg lg:text-xl hover:translate-y-1 `} href='#serviciosIntegrales' ><img className={` inline-block mr-3 h-5 w-auto `} src={anglesDown.src} alt='Angles Down' /> Conoce más aquí <img className={` inline-block ml-3 h-5 w-auto`} src={anglesDown.src} alt='Angles Down' /></Link></p>
-                    {/* <p className={` max-w-5xl text-left w-full text-lg my-8 `}><Link className={` transition-all ease-in-out duration-200 rounded-full py-3 px-6 hover:bg-white bg-[#b10c72] hover:text-black text-white no-underline font-medium`} href='' >Conoce más aquí</Link></p> */}
                 </div>
             </section>
+            
             <section className={` pt-16 bg-black `} id={`serviciosIntegrales`}>
                 <h3 className={` max-w-5xl mx-auto transition-all ease-in-out text-3xl lg:text-4xl font-semibold mb-8 text-center uppercase font-RobotoCondensed opacity-80`}>Servicios integrales</h3>
-                {!!serviciosBlocks?.length && (
-                    <div className={` mx-auto grid grid-cols-1 md:grid-cols-2 `}>
-                        {serviciosBlocks.map((item, index) => (
-                            <div key={index} className={` w-full bg-cover bg-center `} style={{ backgroundImage: `url('${item.fondoImagen.src}')`, }}>
-                                <div className={` transition-all ease-in-out duration-700 flex flex-col items-center ${index % 2 === 0 ? 'md:items-end' : 'md:items-start'} py-28 px-2 md:px-3 lg:px-6 xl:px-12 `}>
-                                    <div data-aos-once="true" data-aos={index % 2 === 0 ? 'fade-up' : 'fade-up'} className={` transition-all ease-in-out py-8 bg-black bg-opacity-70 text-center max-w-md `} >
-                                        <h3 className={`transition-all ease-in-out text-3xl lg:text-4xl font-semibold mx-4 mb-8 font-RobotoCondensed opacity-80`}>{item.titulo}</h3>
-                                        <p className={`transition-all ease-in-out text-lg lg:text-xl mx-4 `}>{item.descripcion}</p>
-                                        {/* <p className={`  text-lg mx-4 my-8 `}><Link className={` transition-all ease-in-out duration-200 rounded-full py-3 px-6 bg-white hover:bg-[#b10c72] text-black hover:text-white no-underline font-medium`} href='' >Cotiza aquí</Link></p> */}
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                )}
+                <ServiciosBlock />
             </section>
+
             <section className={` relative w-full bg-cover bg-center bg-black overflow-hidden `} id={`porQueNosotros`}>
                 <div className={` absolute top-0 left-0 w-full h-full `}>
                     <video poster='images/portadaFondoVideo.png' className='object-cover object-center h-full w-full' preload="auto" autoPlay="autoplay" muted loop playsInline>
-                        <source src={portadaVideo} type="video/mp4" />
+                        <source src='images/portadaFondoVideo.mp4' type="video/mp4" />
                     </video>
                 </div>
                 <div className={` relative max-w-5xl mx-auto grid md:grid-cols-2 grid-cols-1 px-4 md:px-0 pt-16 `}>
@@ -117,7 +60,7 @@ export default function Page() {
                         </ul>
                     </div>
                     <div className={`flex items-center justify-center p-4 text-center bg-white bg-opacity-30 `}>
-                        <img priority data-aos-once="true" data-aos='flip-left' className={` mx-auto `} src={porQueNosotros.src} alt='' />
+                        <img  data-aos-once="true" data-aos='flip-left' className={` mx-auto `} src={porQueNosotros.src} alt='' />
                     </div>
                 </div>
                 <div className={` relative px-4 pt-16`}>
@@ -125,31 +68,23 @@ export default function Page() {
                 </div>
                 <div className={` relative px-4 py-16`}>
                     <h2 className={` max-w-5xl mx-auto text-center w-full transition-all ease-in-out duration-100 text-3xl lg:text-3xl font-bold lg:my-2 opacity-80 uppercase`}>Nuestros tres pilares esenciales</h2>
-
-                    <div className={` mx-auto max-w-5xl grid md:grid-cols-3 grid-cols-1 mt-8 `}>
-
-                        <div data-aos-once="true" data-aos='fade-right' className={` mx-auto text-center w-full text-lg bg-white bg-opacity-30 p-8 `}>
-                            <h3 className={` text-2xl font-medium mb-4 opacity-80 `}>Enfoque Estratégico Personalizado</h3>
-                            <p className={` text-lg`}>Entendemos que cada negocio es único. Trabajamos contigo para comprender tus objetivos, identificar desafíos específicos y desarrollar estrategias de marketing digital a medida. No ofrecemos soluciones genéricas; creamos estrategias que se alinean con tu visión y metas empresariales.</p>
+                    {!!pilaresBlocks?.length && (
+                        <div className={` mx-auto max-w-5xl grid md:grid-cols-3 grid-cols-1 mt-8 `}>
+                            {pilaresBlocks.map((item, index) => (
+                                <div key={index} data-aos-once="true" data-aos='fade-up' className={` mx-auto text-center w-full text-lg ${index % 2 === 0 ? 'bg-white' : 'bg-[#b10c72]'} bg-opacity-30 p-8 `}>
+                                    <h3 className={` text-2xl font-medium mb-6 opacity-80 `}>{item.titulo}</h3>
+                                    <p className={` text-lg text-justify hyphens-auto inset-4 `}>{item.texto}</p>
+                                </div>
+                            ))};
                         </div>
-                        <div data-aos-once="true" data-aos='fade-right' className={` mx-auto text-center w-full text-lg bg-[#b10c72] bg-opacity-30 p-8 `}>
-                            <h3 className={` text-2xl font-medium mb-4 opacity-80`}>Innovación y Adaptabilidad Continuas</h3>
-                            <p className={` text-lg`}>El marketing digital evoluciona constantemente. Nos comprometemos a mantenerte al tanto de las últimas tendencias y tecnologías. Nuestro equipo altamente capacitado se esfuerza por la innovación constante para asegurar que tu presencia en línea esté siempre a la par con las mejores prácticas y te dé una ventaja competitiva sostenible.</p>
-                        </div>
-                        <div data-aos-once="true" data-aos='fade-right' className={` mx-auto text-center w-full text-lg bg-white bg-opacity-30 p-8 `}>
-                            <h3 className={` text-2xl font-medium mb-4 opacity-80`}>Resultados Medibles y Tangibles</h3>
-                            <p className={` text-lg`}>No nos conformamos con promesas vacías. Implementamos estrategias con datos y métricas concretas para asegurarnos de que cada campaña genere resultados tangibles.</p>
-                        </div>
-
-                    </div>
+                    )};
                 </div>
                 <p className={` relative max-w-5xl mx-auto px-8 text-center text-white font-semibold text-xl lg:text-2xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>
-                    Algunos de los clientes que han confiado en nosotros
-                </p>
+                    Algunos de los clientes que han confiado en nosotros</p>
                 <p className={` relative max-w-5xl mx-auto px-8 mt-8 text-center pb-16 `}>
-                    <img className={` border-[16px] border-solid border-white border-opacity-30 inline-block transition-opacity duration-[618ms] ease-in-out ${fade ? 'opacity-100' : 'opacity-0'} `} src={imagen.src} alt='' />
-                </p>
+                    <Clientesimagenes /></p>
             </section>
+
             <section className={` relative bg-fucsiaAzulRatioFondo lg:pb-24 `} id={`contacto`} >
                 <div className={`  absolute top-0 left-0 w-full h-full bg-white opacity-80 `} />
                 <div className={`  absolute top-0 left-0 w-full h-full opacity-100 bg-repeat `} style={{ backgroundImage: `url('images/noise.png')` }} />
