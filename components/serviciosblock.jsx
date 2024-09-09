@@ -21,15 +21,14 @@ return (<>
 {!!serviciosBlocks?.length && (
     <div className={` mx-auto grid grid-cols-1 md:grid-cols-2 `}>
         {serviciosBlocks.map((item, index) => (
-            <div key={index} className={` w-full bg-cover bg-center `} style={{ backgroundImage: `url('${item.fondoImagen.src}')`, }}>
-                <div className={` transition-all ease-in-out duration-700 flex flex-col items-center ${index % 2 === 0 ? 'md:items-end' : 'md:items-start'} py-28 px-2 md:px-3 lg:px-6 xl:px-12 `}>
-                    <div data-aos-once="true" data-aos={index % 2 === 0 ? 'fade-up' : 'fade-up'} className={` transition-all ease-in-out py-8 bg-black bg-opacity-70 text-center max-w-md `} >
+                <div key={index} data-aos-once="true" data-aos='fade' className={` relative transition-all ease-in-out duration-700 flex flex-col items-center ${index % 2 === 0 ? 'md:items-end' : 'md:items-start'} py-28 px-2 md:px-3 lg:px-6 xl:px-12 `}>
+                    <div className={` opacity-80 absolute top-0 left-0 h-full w-full bg-cover bg-center`} style={{ backgroundImage: `url('${item.fondoImagen.src}')`, }} />
+                    <div data-aos-once="true" data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'} className={` transition-all ease-in-out py-8 bg-black bg-opacity-70 text-center max-w-md `} >
                         <h3 className={`transition-all ease-in-out text-3xl lg:text-4xl font-semibold mx-4 mb-8 font-RobotoCondensed opacity-80`}>{item.titulo}</h3>
                         <p className={`transition-all ease-in-out text-base lg:text-lg mx-4 text-justify inset-4 hyphens-auto opacity-80 leading-relaxed`}>{item.descripcion}</p>
                         {/* <p className={`  text-lg mx-4 my-8 `}><Link className={` transition-all ease-in-out duration-200 rounded-full py-3 px-6 bg-white hover:bg-[#b10c72] text-black hover:text-white no-underline font-medium`} href='' >Cotiza aquí</Link></p> */}
                     </div>
                 </div>
-            </div>
         ))}
     </div>
 )}

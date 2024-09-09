@@ -8,7 +8,7 @@ export const metadata = {
     title: 'Impulso 360'
 };
 
-export default function RootLayout({ children }) {
+const RootLayout = ({children}) => { 
     return (
         <html lang="en" data-theme="lofi" className={`scroll-smooth`}>
             <head>
@@ -22,4 +22,6 @@ export default function RootLayout({ children }) {
             </body>
         </html>
     );
-}
+};
+
+export default RootLayout;

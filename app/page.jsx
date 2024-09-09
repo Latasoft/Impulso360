@@ -19,17 +19,17 @@ const pilaresBlocks = [
     { titulo: 'Resultados Medibles y Tangibles', texto: 'No nos conformamos con promesas vacías. Implementamos estrategias con datos y métricas concretas para asegurarnos de que cada campaña genere resultados tangibles.' }
 ];
 
-export default function Page() {
+const Page = () => {
 
     return (
-        <main className={` relative text-white font-Roboto `}>
+        <main className={` relative text-white font-Roboto  bg-black`}>
+        <div className={` fixed h-screen top-0 left-0 w-full `}>
+            <video poster='images/portadaFondoVideo.png' className='object-cover object-center h-full w-full' preload="auto" autoPlay="autoplay" muted loop playsInline>
+                <source src='images/portadaFondoVideo.mp4' type="video/mp4" />
+            </video>
+        </div>
 
-            <section className={` h-screen relative w-full bg-cover bg-center bg-black overflow-hidden  `} id={`inicio`}>
-                <div className={` absolute top-0 left-0 w-full h-full `}>
-                    <video poster='images/portadaFondoVideo.png' className='object-cover object-center h-full w-full' preload="auto" autoPlay="autoplay" muted loop playsInline>
-                        <source src='images/portadaFondoVideo.mp4' type="video/mp4" />
-                    </video>
-                </div>
+            <section className={` h-screen relative w-full bg-cover bg-center bg-transparent overflow-hidden  `} id={`inicio`}>
                 <div className={`  absolute top-0 left-0 w-full h-full bg-fucsiaAzulRatioFondo opacity-40 `} />
                 <div className={` relative mx-auto flex flex-col w-full h-full items-center justify-center px-4`}>
                     <h2 data-aos-once="true" data-aos='fade-right' className={` max-w-5xl text-left w-full transition-all ease-in-out text-5xl md:text-6xl lg:text-7xl font-bold lg:my-0 opacity-80`}>En<img className={` inline-block h-16 md:h-20 lg:h-24 w-auto `}  src={impulso360Logo.src} alt='' /></h2>
@@ -38,17 +38,13 @@ export default function Page() {
                 </div>
             </section>
             
-            <section className={` pt-16 bg-black `} id={`serviciosIntegrales`}>
+            <section className={`relative pt-16 bg-black bg-opacity-50 backdrop-blur-md `} id={`serviciosIntegrales`}>
                 <h3 className={` max-w-5xl mx-auto transition-all ease-in-out text-3xl lg:text-4xl font-semibold mb-8 text-center uppercase font-RobotoCondensed opacity-80`}>Servicios integrales</h3>
                 <ServiciosBlock />
             </section>
 
-            <section className={` relative w-full bg-cover bg-center bg-black overflow-hidden `} id={`porQueNosotros`}>
-                <div className={` absolute top-0 left-0 w-full h-full `}>
-                    <video poster='images/portadaFondoVideo.png' className='object-cover object-center h-full w-full' preload="auto" autoPlay="autoplay" muted loop playsInline>
-                        <source src='images/portadaFondoVideo.mp4' type="video/mp4" />
-                    </video>
-                </div>
+            <section className={` relative w-full bg-white bg-opacity-10 overflow-hidden `} id={`porQueNosotros`}>
+
                 <div className={` relative max-w-5xl mx-auto grid md:grid-cols-2 grid-cols-1 px-4 md:px-0 pt-16 `}>
                     <div className={` p-4 bg-white bg-opacity-30 `}>
                         <h3 className={` text-[#b10c72] transition-all ease-in-out text-3xl lg:text-4xl font-semibold font-RobotoCondensed mx-4 mb-8 mt-4 `}>¿Por qué nosotros?</h3>
@@ -85,8 +81,9 @@ export default function Page() {
                     <Clientesimagenes /></p>
             </section>
 
-            <section className={` relative bg-fucsiaAzulRatioFondo lg:pb-24 `} id={`contacto`} >
-                <div className={`  absolute top-0 left-0 w-full h-full bg-white opacity-80 `} />
+            <section className={` relative lg:pb-24 `} id={`contacto`} >
+            <div className={`  absolute top-0 left-0 w-full h-full  bg-fucsiaAzulRatioFondo opacity-60 `} />
+                <div className={`  absolute top-0 left-0 w-full h-full bg-white opacity-60 `} />
                 <div className={`  absolute top-0 left-0 w-full h-full opacity-100 bg-repeat `} style={{ backgroundImage: `url('images/noise.png')` }} />
 
                 <p className={` relative max-w-5xl mx-auto px-8 pt-16 pb-4 text-center text-black font-semibold text-xl lg:text-2xl leading-relaxed lg:leading-relaxed font-RobotoCondensed`}>
@@ -117,5 +114,6 @@ export default function Page() {
             </section>
         </main>
     );
-}
+};
 
+export default Page;
