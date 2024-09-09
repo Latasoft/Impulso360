@@ -32,7 +32,7 @@ return (<>
         ))}
     </div>
 )}
-</>);
-};
+</>)
+}
 
 export default ServiciosBlock;
