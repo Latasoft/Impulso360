@@ -69,7 +69,7 @@ const Page = () => {
                             {pilaresBlocks.map((item, index) => (
                                 <div key={index} data-aos-once="true" data-aos='fade-up' className={` mx-auto text-center w-full text-lg ${index % 2 === 0 ? 'bg-white' : 'bg-[#b10c72]'} bg-opacity-30 p-8 `}>
                                     <h3 className={` text-2xl font-medium mb-6 opacity-80 `}>{item.titulo}</h3>
-                                    <p className={` text-lg text-justify hyphens-auto inset-4 `}>{item.texto}</p>
+                                    <p className={` text-lg text-justify hyphens-auto  indent-4 `}>{item.texto}</p>
                                 </div>
                             ))};
                         </div>
